@@ -4,6 +4,7 @@ import org.testng.annotations.Test;
 
 public class SearchTest extends WebDriverSettings {
 @Test
+    
     public void searchTest() {
         searchPage.clearInputField();
         searchPage.inputSearchText("погода пенза");
