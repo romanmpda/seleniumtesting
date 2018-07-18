@@ -7,12 +7,10 @@ import ru.yandex.pages.SearchPage;
 import java.util.concurrent.TimeUnit;
 
 public class WebDriverSettings{
-    public  static WebDriver driver;
-    
+    public  static WebDriver driver;    
     public static SearchPage searchPage;
     
     @BeforeClass
-    
     public void  setup(){
         System.setProperty("webdriver.chrome.driver" ,"chromedriver.exe");
         driver = new ChromeDriver();
@@ -21,8 +19,8 @@ public class WebDriverSettings{
         driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
         driver.get ("https://www.yandex.ru/");
     }
-   @AfterClass
     
+   @AfterClass
    public  void  close(){
         driver.quit();
     }
