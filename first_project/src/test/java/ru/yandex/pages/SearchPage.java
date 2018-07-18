@@ -9,13 +9,18 @@ public class SearchPage {
     PageFactory.initElements(driver, this);
         this.driver = driver;
    }
+   
     public WebDriver driver;
+   
    @FindBy(id = "text")
    private WebElement inputField;
+   
     @FindBy(css = "div .search2__button")
    private WebElement searchButton;
+   
     @FindBy(css = "div  a[href='https://yandex.ru/pogoda/penza?from=serp_title'] .organic__url-text")
     private WebElement firstLink;
+   
     public void inputSearchText(String request){
         inputField.sendKeys(request);
     }
