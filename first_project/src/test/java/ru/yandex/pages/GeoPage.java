@@ -22,13 +22,12 @@ public class GeoPage {
     private WebElement inputCity;
     @FindBy (css="div .b-autocomplete-item__reg")
     private WebElement firstCityEnter;
-    @FindBy (css="div .b-autocomplete-item__details")
-    private WebElement secondCityEnter;
     @FindBy (css=".home-tabs__more-switcher")
     private WebElement moreBotton;
     @FindAll(@FindBy(css=".home-tabs__more-link"))
     private List <WebElement> moreLink;
-        public void clickGeolinkButton(){
+    
+    public void clickGeolinkButton(){
         geolinkReg.click();
     }
     public void clearInputField(){
@@ -39,9 +38,6 @@ public class GeoPage {
     }
         public void clickfFirstCityEnter(){
         firstCityEnter.click();
-    }
-    public void clickfSecondCityEnter(){
-        secondCityEnter.click();
     }
     public void clickfMoreBotton(){
         moreBotton.click();
