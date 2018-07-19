@@ -22,16 +22,14 @@ public class SearchPage {
       public void inputSearchText(String request){
            inputField.sendKeys(request);
        }
-   
       public void clearInputField(){
            inputField.clear();
        }
-   
       public void clickSearchButton(){
            searchButton.click();
        }
    
-      public String grtFirstLinkText(){
+      public String getFirstLinkText(){
            String firstLikString = firstLink.getText();
            return firstLikString;
     }

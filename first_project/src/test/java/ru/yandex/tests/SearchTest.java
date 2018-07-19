@@ -8,7 +8,7 @@ public class SearchTest extends WebDriverSettings {
         searchPage.clearInputField();
         searchPage.inputSearchText("погода пенза");
         searchPage.clickSearchButton();
-        String firstLikString = searchPage.grtFirstLinkText();
+        String firstLikString = searchPage.getFirstLinkText();
         Assert.assertEquals("Погода в Пензе", firstLikString);
     }
 }
