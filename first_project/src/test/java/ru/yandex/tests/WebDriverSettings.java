@@ -3,28 +3,26 @@ import org.openqa.selenium.WebDriver;
 import org.testng.annotations.AfterClass;
 import org.testng.annotations.BeforeClass;
 import org.openqa.selenium.chrome.ChromeDriver;
-import ru.yandex.pages.GeoPage;
-import ru.yandex.pages.SearchPage;
+import ru.yandex.pages.BasePage;
 import java.util.concurrent.TimeUnit;
 
 public class WebDriverSettings{
     public static WebDriver driver;
-    public static String YANDEXURL="https://www.yandex.ru/";
-    
+    public static BasePage basePage;
+    public static String YANDEXHOMEURL="https://www.yandex.ru/";
+
+
     @BeforeClass
-    
     public void  setup(){
         System.setProperty("webdriver.chrome.driver" ,"chromedriver.exe");
         driver = new ChromeDriver();
-        searchPage = new SearchPage(driver);
-        geoPage = new GeoPage(driver);
+        basePage = new BasePage(driver);
         driver.manage().window().maximize();
         driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
-        //driver.get (YANDEXURL);
+
     }
     
    @AfterClass
-    
    public  void  close(){
         driver.quit();
     }
