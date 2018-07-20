@@ -16,6 +16,8 @@ public class GeoPage {
         this.driver = driver;
     }
     public WebDriver driver;
+    public static String FIRSTCITY="Пекин";
+    public static String SECONDCITY="Кишинев";
     
     @FindBy (css="div .geolink__button ")
     private WebElement geolinkReg;
