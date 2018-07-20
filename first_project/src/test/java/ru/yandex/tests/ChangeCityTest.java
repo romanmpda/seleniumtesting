@@ -1,20 +1,18 @@
 package ru.yandex.tests;
-
 import org.testng.Assert;
 import org.testng.annotations.Test;
-
 import java.util.List;
 
 public class ChangeCityTest extends WebDriverSettings {
     @Test
     public void geoTest(){
-        geoPage.clickStepsBefore();
+        geoPage.setupCityEnter();
         geoPage.inputCity(FIRSTCITY);
-        geoPage.clickStepsAfter();
+        geoPage.searchMoreElements();
         List<String> firstCityMore = geoPage.getMoreList();
-        geoPage.clickStepsBefore();
+        geoPage.setupCityEnter();
         geoPage.inputCity(SECONDCITY);
-        geoPage.clickStepsAfter();
+        geoPage.searchMoreElements();
         List<String> secondCityMore = geoPage.getMoreList();
         Assert.assertEquals(secondCityMore, firstCityMore);
     }
