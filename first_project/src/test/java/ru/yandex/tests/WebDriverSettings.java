@@ -9,11 +9,7 @@ import java.util.concurrent.TimeUnit;
 
 public class WebDriverSettings{
     public static WebDriver driver;
-   // public static SearchPage searchPage;
-    //public static GeoPage geoPage;
     public static String YANDEXURL="https://www.yandex.ru/";
-    //public static String FIRSTCITY="Пекин";
-    //public static String SECONDCITY="Кишинев";
     
     @BeforeClass
     
