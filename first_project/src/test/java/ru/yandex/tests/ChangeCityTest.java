@@ -6,6 +6,7 @@ import java.util.List;
 public class ChangeCityTest extends WebDriverSettings {
     @Test
     public void geoTest(){
+        public static GeoPage geoPage;
         geoPage.setupCityEnter();
         geoPage.inputCity(FIRSTCITY);
         geoPage.searchMoreElements();
