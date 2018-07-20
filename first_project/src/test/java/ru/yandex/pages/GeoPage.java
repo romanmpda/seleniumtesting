@@ -16,6 +16,7 @@ public class GeoPage {
         this.driver = driver;
     }
     public WebDriver driver;
+    
     @FindBy (css="div .geolink__button ")
     private WebElement geolinkReg;
     @FindBy (css=".input__control")
@@ -33,25 +34,31 @@ public class GeoPage {
     public void clearInputField(){
         inputCity.clear();
     }
+    
     public void inputCity(String city){
         inputCity.sendKeys(city);
     }
-        public void clickfFirstCityEnter(){
+    
+     public void clickfFirstCityEnter(){
         firstCityEnter.click();
     }
+    
     public void clickfMoreBotton(){
         moreBotton.click();
     }
+    
     public List getMoreList(){
         List<String> moreLinkList = new ArrayList<>();
         moreLink.forEach(WebElement->{moreLinkList.add(WebElement.getText());});
         return moreLinkList;
     }
-    public void clickStepsBefore(){
+    
+    public void setupCityEnter(){
             clickGeolinkButton();
             clearInputField();
         }
-     public  void clickStepsAfter(){
+    
+     public  void searchMoreElements(){
             clickfFirstCityEnter();
             clickfMoreBotton();
      }
