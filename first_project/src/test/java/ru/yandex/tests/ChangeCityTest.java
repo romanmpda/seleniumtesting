@@ -7,6 +7,8 @@ public class ChangeCityTest extends WebDriverSettings {
     @Test
     public void geoTest(){
         public static GeoPage geoPage;
+        
+        basePage.getUrl(YANDEXURL);
         geoPage.setupCityEnter();
         geoPage.inputCity(FIRSTCITY);
         geoPage.searchMoreElements();
