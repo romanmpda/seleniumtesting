@@ -11,10 +11,12 @@ public class WebDriverSettings{
     public static WebDriver driver;
     public static SearchPage searchPage;
     public static GeoPage geoPage;
-    public static String BASEURL="https://www.yandex.ru/";
+    public static String YANDEXURL="https://www.yandex.ru/";
     public static String FIRSTCITY="Пекин";
     public static String SECONDCITY="Кишинев";
+    
     @BeforeClass
+    
     public void  setup(){
         System.setProperty("webdriver.chrome.driver" ,"chromedriver.exe");
         driver = new ChromeDriver();
@@ -22,10 +24,11 @@ public class WebDriverSettings{
         geoPage = new GeoPage(driver);
         driver.manage().window().maximize();
         driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
-        driver.get (BASEURL);
+        driver.get (YANDEXURL);
     }
     
    @AfterClass
+    
    public  void  close(){
         driver.quit();
     }
