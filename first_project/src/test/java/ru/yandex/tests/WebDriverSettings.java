@@ -10,16 +10,15 @@ public class WebDriverSettings{
     public static WebDriver driver;
     public static BasePage basePage;
     public static String YANDEXHOMEURL="https://www.yandex.ru/";
-
+    public static String CHROMEDRIVERLOCATION = "chromedriver.exe";
 
     @BeforeClass
     public void  setup(){
-        System.setProperty("webdriver.chrome.driver" ,"chromedriver.exe");
+        System.setProperty("webdriver.chrome.driver" ,CHROMEDRIVERLOCATION);
         driver = new ChromeDriver();
         basePage = new BasePage(driver);
         driver.manage().window().maximize();
         driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
-
     }
     
    @AfterClass

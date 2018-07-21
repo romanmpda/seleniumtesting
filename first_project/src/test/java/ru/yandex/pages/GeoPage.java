@@ -26,22 +26,27 @@ public class GeoPage {
     private WebElement moreBotton;
     @FindAll(@FindBy(css=".home-tabs__more-link"))
     private List <WebElement> moreLink;
-        public void clickGeolinkButton(){
+
+    public void clickGeolinkButton(){
         geolinkReg.click();
     }
+
     public void clearInputField(){
         inputCity.clear();
     }
+
     public void inputCity(String city){
         inputCity.sendKeys(city);
     }
-        public void clickfFirstCityEnter(){
+
+    public void clickfFirstCityEnter(){
         firstCityEnter.click();
     }
 
     public void clickfMoreBotton(){
         moreBotton.click();
     }
+
     public List getMoreList(){
         List<String> moreLinkList = new ArrayList<>();
         moreLink.forEach(WebElement->{moreLinkList.add(WebElement.getText());});
@@ -51,6 +56,7 @@ public class GeoPage {
             clickGeolinkButton();
             clearInputField();
         }
+
      public  void searchMoreElements(){
             clickfFirstCityEnter();
             clickfMoreBotton();
