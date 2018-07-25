@@ -13,5 +13,11 @@ public class BasePage {
     public void openPage(String urlGet){
         driver.get(urlGet);
     }
+    public void scroll(By locator) {
+     WebElement weblement = driver.findElement(locator);
+     Actions actions = new Actions(driver);
+     actions.moveToElement(element);
+     actions.perform();
+    }
 
 }
