@@ -3,7 +3,11 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.interactions.Actions;
+import org.openqa.selenium.support.FindAll;
+import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
+
+import java.util.List;
 
 
 public class BasePage {
@@ -17,10 +21,9 @@ public class BasePage {
         driver.get(urlGet);
     }
 
-    public void scroll(By locator) {
-     WebElement weblement = driver.findElement(locator);
+    public void scrollToElement(WebElement elementToScroll) {
      Actions actions = new Actions(driver);
-     actions.moveToElement(weblement);
+     actions.moveToElement(elementToScroll);
      actions.perform();
     }
     public  void clickElement(WebElement elementToClick){
@@ -34,9 +37,16 @@ public class BasePage {
         String currentTitle = driver.getTitle();
         return  currentTitle;
     }
-        public void clickList(List locatorToClick, Integer clickableId){
-        
-            locatorToClick.get(idToClick).click();
+        public void clickList(List<WebElement> locatorToClick, Integer clickableId){
+        locatorToClick.get(clickableId).click();
+    }
+    public  void  moveToElement(WebElement elementToMove){
+        Actions actions = new Actions(driver);
+        actions.moveToElement(elementToMove).build().perform();
+    }
+    public Integer getListSize(List<WebElement> locatorToCount  ){
+        Integer listSize = locatorToCount.size();
+        return listSize;
     }
 
 }

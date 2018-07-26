@@ -32,7 +32,7 @@ public class SearchPage {
     @FindBy(css = ".stories-set")
    public WebElement newsStories;
     @FindAll(@FindBy(css=".home-arrow__tabs .home-link"))
-    private List<WebElement> allLinks;
+    public List<WebElement> allLinks;
     @FindBy(css = ".map-controls-view__navigation-controlst")
     public WebElement mapsZoom;
     @FindBy(css = ".link")
@@ -41,23 +41,9 @@ public class SearchPage {
     public WebElement translateServoce;
     @FindBy(css = ".d-tabs__tab")
     public WebElement musicTabs;
-   @FindBy(css = "a[href='/catalog/54726/list?hid=91491&amp;track=menuleaf']")
-    public WebElement electroniksLink;
-   @FindBy(css = "button[role=listbox]")
-    public WebElement buttonListbox;
-   
-   
 
 
 
-
-
-
-
-
-    public void clickAllLinks(Integer idToClick){
-        allLinks.get(idToClick).click();
-    }
       public void inputSearchText(String request){
            inputField.sendKeys(request);
        }
