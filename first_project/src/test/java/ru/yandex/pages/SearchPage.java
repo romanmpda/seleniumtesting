@@ -43,6 +43,9 @@ public class SearchPage {
     public WebElement musicTabs;
    @FindBy(css = "a[href='/catalog/54726/list?hid=91491&amp;track=menuleaf']")
     public WebElement electroniksLink;
+   @FindBy(css = "button[role=listbox]")
+    public WebElement buttonListbox;
+   
    
 
 
