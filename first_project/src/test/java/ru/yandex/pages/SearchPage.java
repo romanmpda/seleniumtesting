@@ -41,7 +41,7 @@ public class SearchPage {
     public WebElement translateServoce;
     @FindBy(css = ".d-tabs__tab")
     public WebElement musicTabs;
-   @FindBy(css = "a[href='/catalog/54440?hid=198119&track=menu']")
+   @FindBy(css = "a[href='/catalog/54726/list?hid=91491&amp;track=menuleaf']")
     public WebElement electroniksLink;
    
 
