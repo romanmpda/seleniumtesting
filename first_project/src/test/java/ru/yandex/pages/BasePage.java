@@ -34,5 +34,9 @@ public class BasePage {
         String currentTitle = driver.getTitle();
         return  currentTitle;
     }
+        public void clickList(List locatorToClick, Integer clickableId){
+        
+            locatorToClick.get(idToClick).click();
+    }
 
 }
