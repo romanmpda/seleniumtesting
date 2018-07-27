@@ -1,12 +1,10 @@
 package ru.yandex.pages;
-import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.interactions.Actions;
-import org.openqa.selenium.support.FindAll;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
-
+import java.util.ArrayList;
 import java.util.List;
 
 
@@ -44,9 +42,14 @@ public class BasePage {
         Actions actions = new Actions(driver);
         actions.moveToElement(elementToMove).build().perform();
     }
-    public Integer getListSize(List<WebElement> locatorToCount  ){
+    public Integer getListSize(List<WebElement> locatorToCount){
         Integer listSize = locatorToCount.size();
         return listSize;
+    }
+    public List getTextList(List <WebElement> textToGetList){
+        List<String> textGetedList = new ArrayList<>();
+        textToGetList.forEach(WebElement->{textGetedList.add(WebElement.getText());});
+        return textGetedList;
     }
 
 }

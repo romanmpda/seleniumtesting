@@ -1,13 +1,8 @@
 package ru.yandex.tests;
-
 import org.testng.Assert;
 import org.testng.annotations.Test;
 import ru.yandex.pages.MarketPage;
 import ru.yandex.pages.SearchPage;
-
-import java.lang.reflect.Array;
-import java.util.List;
-
 import static ru.yandex.tests.SearchTest.searchPage;
 
 public class SwitchCountTest extends WebDriverSettings {
@@ -28,7 +23,7 @@ public class SwitchCountTest extends WebDriverSettings {
         Assert.assertEquals(basePage.getListSize(marketPage.elementsCount),SORTCOUNT48);
         basePage.clickElement(marketPage.buttonListbox);
         basePage.clickList(marketPage.selectText, 0);
-        Assert.assertEquals(basePage.getListSize(marketPage.elementsCount),SORTCOUNT48);
-               
+        Assert.assertEquals(basePage.getListSize(marketPage.elementsCount),SORTCOUNT12);
+
     }
 }

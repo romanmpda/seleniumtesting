@@ -30,8 +30,18 @@ public class MarketPage {
     public WebElement toClick;
     @FindBy(css = "span [class='button__text']")
     public WebElement secondClick;
-
-
-
-
+    @FindAll(@FindBy(css = "[class='image image_name_compare']"))
+    public List<WebElement> goodsToCompare;
+    @FindBy(css = "a[href='/compare?track=rmmbr']")
+    public WebElement compareButton;
+    @FindAll(@FindBy(css = ".price"))
+    public List<WebElement> comparebaleGoodsCount;
+    @FindBy(css = "[class='image image_name_remove']")
+    public WebElement removeButton;
+    @FindAll(@FindBy(css = "[class='n-filter-sorter i-bem n-filter-sorter_js_inited']"))
+    public List<WebElement> sorterFilters;
+    @FindAll(@FindBy(css = ".n-snippet-cell2__main-price .price"))
+    public List<WebElement> pricesAll;
+    @FindBy(css = "[class='n-filter-sorter i-bem n-filter-sorter_js_inited n-filter-sorter_sort_asc n-filter-sorter_state_select']")
+    public WebElement priceIsSelected;
 }

@@ -1,10 +1,7 @@
 package ru.yandex.tests;
-
 import org.testng.Assert;
 import org.testng.annotations.Test;
 import ru.yandex.pages.GeoPage;
-
-
 import java.util.List;
 
 public class ChangeCityTest extends WebDriverSettings {

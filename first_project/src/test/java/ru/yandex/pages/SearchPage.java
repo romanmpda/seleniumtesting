@@ -25,39 +25,37 @@ public class SearchPage {
    public WebElement videoPagaWrapper;
    @FindBy(css = "a[href='//yandex.ru/']")
    public WebElement yandexLink;
-    @FindBy(css = "a[href='https://yandex.ru']")
-    public WebElement yandexFullLink;
+   @FindBy(css = "a[href='https://yandex.ru']")
+   public WebElement yandexFullLink;
    @FindBy(css = ".views__wrap")
    public WebElement imagesPagaWrapper;
-    @FindBy(css = ".stories-set")
+   @FindBy(css = ".stories-set")
    public WebElement newsStories;
-    @FindAll(@FindBy(css=".home-arrow__tabs .home-link"))
-    public List<WebElement> allLinks;
-    @FindBy(css = ".map-controls-view__navigation-controlst")
-    public WebElement mapsZoom;
-    @FindBy(css = ".link")
-    public WebElement marketNavigation;
-    @FindBy(css = ".service")
-    public WebElement translateServoce;
-    @FindBy(css = ".d-tabs__tab")
-    public WebElement musicTabs;
+   @FindAll(@FindBy(css=".home-arrow__tabs .home-link"))
+   public List<WebElement> allLinks;
+   @FindBy(css = ".map-controls-view__navigation-controlst")
+   public WebElement mapsZoom;
+   @FindBy(css = ".link")
+   public WebElement marketNavigation;
+   @FindBy(css = ".service")
+   public WebElement translateServoce;
+   @FindBy(css = ".d-tabs__tab")
+   public WebElement musicTabs;
 
-
-
-      public void inputSearchText(String request){
+    public void inputSearchText(String request){
            inputField.sendKeys(request);
        }
 
-      public void clearInputField(){
+    public void clearInputField(){
            inputField.clear();
        }
 
-      public void clickSearchButton(){
+    public void clickSearchButton(){
            searchButton.click();
        }
    
-      public String getFirstLinkText(){
-           String firstLikString = firstLink.getText();
+    public String getFirstLinkText(){
+        String firstLikString = firstLink.getText();
            return firstLikString;
     }
 
