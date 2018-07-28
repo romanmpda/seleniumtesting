@@ -4,8 +4,9 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindAll;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
-
 import java.util.List;
+import static ru.yandex.tests.WebDriverSettings.basePage;
+
 
 public class MarketPage {
     public MarketPage(WebDriver driver) {
@@ -13,6 +14,7 @@ public class MarketPage {
         this.driver = driver;
     }
     public WebDriver driver;
+    public static String MARKETURL = "https://market.yandex.ru/";
 
     @FindAll(@FindBy(css = "[class='link topmenu__link']"))
     public List<WebElement> electonicsItem;
@@ -44,4 +46,13 @@ public class MarketPage {
     public List<WebElement> pricesAll;
     @FindBy(css = "[class='n-filter-sorter i-bem n-filter-sorter_js_inited n-filter-sorter_sort_asc n-filter-sorter_state_select']")
     public WebElement priceIsSelected;
+    @FindBy(css = ".n-compare-empty__content")
+    public WebElement emptyContent;
+
+
+    public void goToMobileCategory(){
+        basePage.openPage(MARKETURL);
+        basePage.clickList(electonicsItem, 0);
+        basePage.clickList(electroniksLink, 0);
+    }
 }
