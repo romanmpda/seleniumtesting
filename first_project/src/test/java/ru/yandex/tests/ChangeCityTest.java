@@ -14,13 +14,13 @@ public class ChangeCityTest extends WebDriverSettings {
         geoPage = new GeoPage(driver);
         basePage.openPage(YANDEXHOMEURL);
         geoPage.setupCityEnter();
-        geoPage.inputCity(FIRSTCITY);
+        basePage.inputText(FIRSTCITY, geoPage.inputCity);
         geoPage.searchMoreElements();
-        List<String> firstCityMore = geoPage.getMoreList();
+        List<String> firstCityMore = basePage.getTextList(geoPage.moreLink);
         geoPage.setupCityEnter();
-        geoPage.inputCity(SECONDCITY);
+        basePage.inputText(SECONDCITY, geoPage.inputCity);
         geoPage.searchMoreElements();
-        List<String> secondCityMore = geoPage.getMoreList();
+        List<String> secondCityMore = basePage.getTextList(geoPage.moreLink);
         Assert.assertEquals(secondCityMore, firstCityMore);
     }
 }

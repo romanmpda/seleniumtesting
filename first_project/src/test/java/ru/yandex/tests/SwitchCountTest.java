@@ -31,8 +31,6 @@ public class SwitchCountTest extends WebDriverSettings {
         basePage.clickElement(marketPage.showBotton);
         List<String> list12=basePage.getTextList(marketPage.selectText);
         Integer id12=basePage.compareTextInList(list12,SHOW12);
-        System.out.println(list12);
-        System.out.println(id12);
         basePage.clickList(marketPage.selectText, id12);
         basePage.scrollToElementJS(searchPage.yandexFullLink);
         Assert.assertEquals(basePage.getListSize(marketPage.elementsCount),SORTCOUNT12);

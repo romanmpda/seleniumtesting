@@ -1,4 +1,5 @@
 package ru.yandex.pages;
+import org.openqa.selenium.By;
 import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
@@ -63,6 +64,19 @@ public class BasePage {
         Integer idOfEqual = stringToComapre.indexOf(compareWith);
         return idOfEqual;
     }
-
-
+    public void inputText(String textToinput, WebElement inputField){
+        inputField.sendKeys(textToinput);
+    }
+    public  void clearField(WebElement fieldToClear){
+        fieldToClear.clear();
+    }
+    public String getElementText(WebElement elementToGetText){
+        return elementToGetText.getText();
+    }
+    public  WebElement findByCssSelector(String cssSelector){
+        return driver.findElement(By.cssSelector(cssSelector));
+    }
+    public  WebElement findById(String Id){
+        return driver.findElement(By.id(Id));
+    }
 }

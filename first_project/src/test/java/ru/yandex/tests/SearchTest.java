@@ -12,10 +12,9 @@ public class SearchTest extends WebDriverSettings {
     public void searchTest() {
         searchPage = new SearchPage(driver);
         basePage.openPage(YANDEXHOMEURL);
-        searchPage.clearInputField();
-        searchPage.inputSearchText(SEARCHREQUEST);
-        searchPage.clickSearchButton();
-        String firstLikString = searchPage.getFirstLinkText();
-        Assert.assertEquals(FIRSTWEATHERLINKTEXT, firstLikString);
+        basePage.clearField(searchPage.inputField);
+        basePage.inputText(SEARCHREQUEST, searchPage.inputField);
+        basePage.clickElement(searchPage.searchButton);
+        Assert.assertEquals(FIRSTWEATHERLINKTEXT, basePage.getElementText(searchPage.firstLink));
     }
 }

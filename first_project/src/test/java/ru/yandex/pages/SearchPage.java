@@ -16,11 +16,11 @@ public class SearchPage {
    public WebDriver driver;
    
    @FindBy(id = "text")
-   private WebElement inputField;
+   public WebElement inputField;
    @FindBy(css = "div .search2__button")
-   private WebElement searchButton;
+   public WebElement searchButton;
    @FindBy(css = "div  a[href='https://yandex.ru/pogoda/penza?from=serp_title'] .organic__url-text")
-   private WebElement firstLink;
+   public WebElement firstLink;
    @FindBy(css = ".related-serp__thumb-wrapper")
    public WebElement videoPagaWrapper;
    @FindBy(css = "a[href='//yandex.ru/']")
@@ -41,22 +41,4 @@ public class SearchPage {
    public WebElement translateServoce;
    @FindBy(css = ".d-tabs__tab")
    public WebElement musicTabs;
-
-    public void inputSearchText(String request){
-           inputField.sendKeys(request);
-       }
-
-    public void clearInputField(){
-           inputField.clear();
-       }
-
-    public void clickSearchButton(){
-           searchButton.click();
-       }
-   
-    public String getFirstLinkText(){
-        String firstLikString = firstLink.getText();
-           return firstLikString;
-    }
-
 }
