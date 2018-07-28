@@ -12,6 +12,7 @@ public class WebDriverSettings{
     public static String YANDEXHOMEURL="https://www.yandex.ru/";
     public static String CHROMEDRIVERLOCATION = "chromedriver.exe";
 
+
     @BeforeClass
     public void  setup(){
         System.setProperty("webdriver.chrome.driver" ,CHROMEDRIVERLOCATION);

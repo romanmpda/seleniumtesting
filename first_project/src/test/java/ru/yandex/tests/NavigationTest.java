@@ -1,5 +1,4 @@
 package ru.yandex.tests;
-import com.google.common.base.Verify;
 import org.testng.Assert;
 import org.testng.annotations.Test;
 import ru.yandex.pages.SearchPage;

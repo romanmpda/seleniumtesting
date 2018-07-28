@@ -34,7 +34,7 @@ public class MarketPage {
     public WebElement secondClick;
     @FindAll(@FindBy(css = "[class='image image_name_compare']"))
     public List<WebElement> goodsToCompare;
-    @FindBy(css = "a[href='/compare?track=rmmbr']")
+    @FindBy(css = ".popup-informer__controls [class='button button_size_m button_theme_normal i-bem button_js_inited'] ")//"a[href='/compare?track=rmmbr']")
     public WebElement compareButton;
     @FindAll(@FindBy(css = ".price"))
     public List<WebElement> comparebaleGoodsCount;
@@ -48,11 +48,17 @@ public class MarketPage {
     public WebElement priceIsSelected;
     @FindBy(css = ".n-compare-empty__content")
     public WebElement emptyContent;
+    @FindAll(@FindBy(css = "[class='link topmenu__subitem']"))
+    public List<WebElement> topmenuSub;
+
 
 
     public void goToMobileCategory(){
         basePage.openPage(MARKETURL);
+        basePage.moveToElementList(electonicsItem, 0);
+        basePage.moveToElementList(topmenuSub, 0);
         basePage.clickList(electonicsItem, 0);
         basePage.clickList(electroniksLink, 0);
+
     }
 }

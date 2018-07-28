@@ -1,8 +1,8 @@
 package ru.yandex.pages;
+import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.interactions.Actions;
-import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 import java.util.ArrayList;
 import java.util.List;
@@ -20,10 +20,14 @@ public class BasePage {
     }
 
     public void scrollToElement(WebElement elementToScroll) {
-     Actions actions = new Actions(driver);
-     actions.moveToElement(elementToScroll);
-     actions.perform();
+        Actions actions = new Actions(driver);
+        actions.moveToElement(elementToScroll);
+        actions.perform();
     }
+    public void scrollToElementJS(WebElement elementToScrollJS) {
+        JavascriptExecutor js =(JavascriptExecutor) driver;
+        js.executeScript("arguments[0].scrollTop=arguments[1];",elementToScrollJS);}
+
     public  void clickElement(WebElement elementToClick){
         elementToClick.click();
     }
@@ -42,6 +46,10 @@ public class BasePage {
         Actions actions = new Actions(driver);
         actions.moveToElement(elementToMove).build().perform();
     }
+    public  void  moveToElementList(List<WebElement> elementToMoveList, Integer idToMove){
+        Actions actionsList = new Actions(driver);
+        actionsList.moveToElement(elementToMoveList.get(idToMove)).build().perform();
+    }
     public Integer getListSize(List<WebElement> locatorToCount){
         Integer listSize = locatorToCount.size();
         return listSize;
@@ -51,5 +59,10 @@ public class BasePage {
         textToGetList.forEach(WebElement->{textGetedList.add(WebElement.getText());});
         return textGetedList;
     }
+    public Integer compareTextInList(List<String> stringToComapre, String compareWith){
+        Integer idOfEqual = stringToComapre.indexOf(compareWith);
+        return idOfEqual;
+    }
+
 
 }

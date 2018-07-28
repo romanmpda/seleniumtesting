@@ -14,8 +14,17 @@ public class CompareTest extends WebDriverSettings{
         searchPage = new SearchPage(driver);
         marketPage = new MarketPage(driver);
         marketPage.goToMobileCategory();
-        basePage.clickList(marketPage.sorterFilters, 0);
+        basePage.moveToElementList(marketPage.goodsToCompare, 0);
+        basePage.clickList(marketPage.goodsToCompare, 0);
+        Assert.assertNotNull(marketPage.compareButton);
+        basePage.moveToElementList(marketPage.goodsToCompare, 1);
+        basePage.clickList(marketPage.goodsToCompare, 1);
+        Assert.assertNotNull(marketPage.compareButton);
+        basePage.moveToElement(marketPage.compareButton);
         basePage.clickElement(marketPage.compareButton);
+        basePage.moveToElementList(marketPage.comparebaleGoodsCount, 0);
+        basePage.moveToElementList(marketPage.comparebaleGoodsCount, 1);
+        basePage.moveToElement(marketPage.removeButton);
         Assert.assertEquals(basePage.getListSize(marketPage.comparebaleGoodsCount), GOODSCOUNT);
         basePage.clickElement(marketPage.removeButton);
         Assert.assertNotNull(marketPage.emptyContent);
