@@ -7,10 +7,8 @@ import static ru.yandex.tests.SwitchCountTest.marketPage;
 public class NavigationTest extends MarketPage {
     marketPage = new MarketPage(driver);
 
-
      @Test
-    public void navigationTest() {
-        
+    public void navigationTest() {       
         marketPage.openPage(YANDEXHOMEURL);
 		
         marketPage.clickList(searchPage.allLinks , 0);
@@ -56,9 +54,11 @@ public class NavigationTest extends MarketPage {
         marketPage.moveToElementList(marketPage.goodsToCompare, 0);
         marketPage.clickList(marketPage.goodsToCompare, 0);
         Assert.assertNotNull(marketPage.compareButton);
+	    
         marketPage.moveToElementList(marketPage.goodsToCompare, 1);
         marketPage.clickList(marketPage.goodsToCompare, 1);
         Assert.assertNotNull(marketPage.compareButton);
+	    
         marketPage.moveToElement(marketPage.compareButton);
         marketPage.clickElement(marketPage.compareButton);
         marketPage.moveToElementList(marketPage.comparebaleGoodsCount, 0);
@@ -66,37 +66,47 @@ public class NavigationTest extends MarketPage {
 		
         marketPage.moveToElement(marketPage.removeButton);
         Assert.assertEquals(marketPage.getListSize(marketPage.comparebaleGoodsCount), GOODSCOUNT);
+	    
         marketPage.clickElement(marketPage.removeButton);
         Assert.assertNotNull(marketPage.emptyContent);
     }
-	    @Test
+  @Test
     public void sortPriceTest(){
         marketPage.goToMobileCategory();
+	    
         marketPage.clickList(marketPage.sorterFilters, 0);
         marketPage.scrollToElement(marketPage.toClick);
+	    
         List<String> notSortedPrice =marketPage.getTextList(marketPage.pricesAll);
         List<String> sortedPrice = notSortedPrice;
         Collections.sort(sortedPrice);
+	    
         Assert.assertNotNull(marketPage.priceIsSelected);
         Assert.assertEquals(sortedPrice, notSortedPrice);
 
     }
-	    @Test
+   @Test
     public void switchCountTest() {
         marketPage.goToMobileCategory();
+	    
         marketPage.scrollToElementJS(marketPage.showBotton);
         marketPage.moveToElement(marketPage.showBotton);
         marketPage.clickElement(marketPage.showBotton);
+	    
         List<String> list48=marketPage.getTextList(marketPage.selectText);
         Integer id48=list48.indexOf(SHOW48);
+	    
         marketPage.clickList(marketPage.selectText, id48);
         marketPage.scrollToElementJS(searchPage.yandexFullLink);
         Assert.assertEquals(marketPage.getListSize(marketPage.elementsCount),SORTCOUNT48);
+	    
         marketPage.scrollToElementJS(marketPage.showBotton);
         marketPage.moveToElement(marketPage.showBotton);
         marketPage.clickElement(marketPage.showBotton);
+	    
         List<String> list12=marketPage.getTextList(marketPage.selectText);
         Integer id12=marketPage.compareTextInList(list12,SHOW12);
+	    
         marketPage.clickList(marketPage.selectText, id12);
         marketPage.scrollToElementJS(searchPage.yandexFullLink);
         Assert.assertEquals(marketPage.getListSize(marketPage.elementsCount),SORTCOUNT12);
