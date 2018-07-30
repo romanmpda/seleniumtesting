@@ -101,6 +101,7 @@ public class NavigationTest extends WebDriverSettings {
 	    @Test
     public void switchCountTest() {
         marketPage.goToMobileCategory();
+	    
         basePage.scrollToElementJS(marketPage.showBotton);
         basePage.moveToElement(marketPage.showBotton);
         basePage.clickElement(marketPage.showBotton);
@@ -109,6 +110,7 @@ public class NavigationTest extends WebDriverSettings {
         basePage.clickList(marketPage.selectText, id48);
         basePage.scrollToElementJS(searchPage.yandexFullLink);
         Assert.assertEquals(basePage.getListSize(marketPage.elementsCount),SORTCOUNT48);
+	    
         basePage.scrollToElementJS(marketPage.showBotton);
         basePage.moveToElement(marketPage.showBotton);
         basePage.clickElement(marketPage.showBotton);
