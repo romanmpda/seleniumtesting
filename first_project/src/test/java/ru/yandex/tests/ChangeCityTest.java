@@ -12,16 +12,16 @@ public class ChangeCityTest extends WebDriverSettings {
     @Test
     public void geoTest(){
         geoPage = new GeoPage(driver);
-        basePage.openPage(YANDEXHOMEURL);
+        geoPage.openPage(YANDEXHOMEURL);
         geoPage.setupCityEnter();
-        basePage.inputText(FIRSTCITY, geoPage.inputCity);
+        geoPage.inputText(FIRSTCITY, geoPage.inputCity);
         geoPage.searchMoreElements();
-        List<String> firstCityMore = basePage.getTextList(geoPage.moreLink);
+        List<String> firstCityMore = geoPage.getTextList(geoPage.moreLink);
         
         geoPage.setupCityEnter();
-        basePage.inputText(SECONDCITY, geoPage.inputCity);
+        geoPage.inputText(SECONDCITY, geoPage.inputCity);
         geoPage.searchMoreElements();
-        List<String> secondCityMore = basePage.getTextList(geoPage.moreLink);
+        List<String> secondCityMore = geoPage.getTextList(geoPage.moreLink);
         Assert.assertEquals(secondCityMore, firstCityMore);
     }
 }
