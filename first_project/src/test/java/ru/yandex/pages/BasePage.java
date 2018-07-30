@@ -73,10 +73,5 @@ public class BasePage {
     public String getElementText(WebElement elementToGetText){
         return elementToGetText.getText();
     }
-    public  WebElement findByCssSelector(String cssSelector){
-        return driver.findElement(By.cssSelector(cssSelector));
-    }
-    public  WebElement findById(String Id){
-        return driver.findElement(By.id(Id));
-    }
+
 }
