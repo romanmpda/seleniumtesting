@@ -10,40 +10,40 @@ public class NavigationTest extends MarketPage {
 
      @Test
     public void navigationTest() {       
-        marketPage.openPage(YANDEXHOMEURL);
+        searchPage.openPage(YANDEXHOMEURL);
 		
-        marketPage.clickList(searchPage.allLinks , 0);
-        Assert.assertEquals(videoUrl, marketPage.getCurrentUrl());
+        searchPage.clickList(searchPage.allLinks , 0);
+        Assert.assertEquals(videoUrl, searchPagee.getCurrentUrl());
         Assert.assertNotNull(searchPage.videoPagaWrapper);
-        marketPage.clickElement(searchPage.yandexLink);
+        searchPage.clickElement(searchPage.yandexLink);
 		
-        marketPage.clickList(searchPage.allLinks , 1);
-        Assert.assertEquals(imagesUrl, marketPage.getCurrentUrl());
+        searchPage.clickList(searchPage.allLinks , 1);
+        Assert.assertEquals(imagesUrl, searchPage.getCurrentUrl());
         Assert.assertNotNull(searchPage.imagesPagaWrapper);
-        marketPage.clickElement(searchPage.yandexFullLink);
+        searchPage.clickElement(searchPage.yandexFullLink);
 		
-        marketPage.clickList(searchPage.allLinks , 2);
-        Assert.assertEquals(newsUrl, marketPage.getCurrentUrl());
+        searchPage.clickList(searchPage.allLinks , 2);
+        Assert.assertEquals(newsUrl, searchPage.getCurrentUrl());
         Assert.assertNotNull(searchPage.newsStories);
-        marketPage.clickElement(searchPage.yandexFullLink);
+        searchPage.clickElement(searchPage.yandexFullLink);
 		
-        marketPage.clickList(searchPage.allLinks , 3);
-        Assert.assertEquals(marketPage.getCurrentTitle(), mapsTitle);
+        searchPage.clickList(searchPage.allLinks , 3);
+        Assert.assertEquals(searchPage.getCurrentTitle(), mapsTitle);
         Assert.assertNotNull(searchPage.mapsZoom);
-        marketPage.clickElement(searchPage.yandexFullLink);
+        searchPage.clickElement(searchPage.yandexFullLink);
 		
-        marketPage.clickList(searchPage.allLinks , 4);
-        Assert.assertEquals(marketPage.getCurrentTitle(), marketTitle);
+        searchPage.clickList(searchPage.allLinks , 4);
+        Assert.assertEquals(searchPagee.getCurrentTitle(), marketTitle);
         Assert.assertNotNull(searchPage.marketNavigation);
-        marketPage.clickElement(searchPage.yandexFullLink);
+        searchPage.clickElement(searchPage.yandexFullLink);
 		
-        marketPage.clickList(searchPage.allLinks , 5);
-        Assert.assertEquals(marketPage.getCurrentUrl(), translateUrl);
+        searchPage.clickList(searchPage.allLinks , 5);
+        Assert.assertEquals(searchPage.getCurrentUrl(), translateUrl);
         Assert.assertNotNull(searchPage.translateServoce);
-        marketPage.clickElement(searchPage.yandexFullLink);
+        searchPage.clickElement(searchPage.yandexFullLink);
 		
-        marketPage.clickList(searchPage.allLinks , 6);
-        Assert.assertEquals(marketPage.getCurrentUrl(), musicUrl);
+        searchPage.clickList(searchPage.allLinks , 6);
+        Assert.assertEquals(searchPage.getCurrentUrl(), musicUrl);
         Assert.assertNotNull(searchPage.musicTabs);
         }
 
