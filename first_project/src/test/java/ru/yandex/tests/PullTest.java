@@ -2,11 +2,9 @@ package ru.yandex.tests;
 import org.testng.Assert;
 import org.testng.annotations.Test;
 import ru.yandex.pages.MarketPage;
-import ru.yandex.pages.SearchPage;
-import static ru.yandex.tests.SearchTest.searchPage;
 import static ru.yandex.tests.SwitchCountTest.marketPage;
 
-public class NavigationTest extends WebDriverSettings {
+public class NavigationTest extends MarketPage {
     private static String videoUrl = "https://yandex.ru/video/";
     private static String imagesUrl = "https://yandex.ru/images/";
     private static String newsUrl = "https://news.yandex.ru/";
