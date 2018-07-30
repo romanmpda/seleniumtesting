@@ -6,6 +6,7 @@ import static ru.yandex.tests.SwitchCountTest.marketPage;
 
 public class NavigationTest extends MarketPage {
     marketPage = new MarketPage(driver);
+    searchPage = new SearchPage(driver);
 
      @Test
     public void navigationTest() {       
