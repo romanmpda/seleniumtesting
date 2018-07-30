@@ -11,10 +11,10 @@ public class SearchTest extends WebDriverSettings {
     @Test
     public void searchTest() {
         searchPage = new SearchPage(driver);
-        basePage.openPage(YANDEXHOMEURL);
-        basePage.clearField(searchPage.inputField);
-        basePage.inputText(SEARCHREQUEST, searchPage.inputField);
-        basePage.clickElement(searchPage.searchButton);
-        Assert.assertEquals(FIRSTWEATHERLINKTEXT, basePage.getElementText(searchPage.firstLink));
+        searchPage.openPage(YANDEXHOMEURL);
+        searchPage.clearField(searchPage.inputField);
+        searchPage.inputText(SEARCHREQUEST, searchPage.inputField);
+        searchPage.clickElement(searchPage.searchButton);
+        Assert.assertEquals(FIRSTWEATHERLINKTEXT, searchPage.getElementText(searchPage.firstLink));
     }
 }
