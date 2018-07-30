@@ -8,7 +8,7 @@ import java.util.List;
 import static ru.yandex.tests.WebDriverSettings.basePage;
 
 
-public class MarketPage {
+public class MarketPage extends BasePage{
     public MarketPage(WebDriver driver) {
         PageFactory.initElements(driver, this);
         this.driver = driver;
