@@ -25,43 +25,43 @@ public class NavigationTest extends WebDriverSettings {
 	marketPage = new MarketPage(driver);
 
 
-    @Test
+     @Test
     public void navigationTest() {
         
-        basePage.openPage(YANDEXHOMEURL);
+        marketPage.openPage(YANDEXHOMEURL);
 		
-        basePage.clickList(searchPage.allLinks , 0);
-        Assert.assertEquals(videoUrl, basePage.getCurrentUrl());
+        marketPage.clickList(searchPage.allLinks , 0);
+        Assert.assertEquals(videoUrl, marketPage.getCurrentUrl());
         Assert.assertNotNull(searchPage.videoPagaWrapper);
-        basePage.clickElement(searchPage.yandexLink);
+        marketPage.clickElement(searchPage.yandexLink);
 		
-        basePage.clickList(searchPage.allLinks , 1);
-        Assert.assertEquals(imagesUrl, basePage.getCurrentUrl());
+        marketPage.clickList(searchPage.allLinks , 1);
+        Assert.assertEquals(imagesUrl, marketPage.getCurrentUrl());
         Assert.assertNotNull(searchPage.imagesPagaWrapper);
-        basePage.clickElement(searchPage.yandexFullLink);
+        marketPage.clickElement(searchPage.yandexFullLink);
 		
-        basePage.clickList(searchPage.allLinks , 2);
-        Assert.assertEquals(newsUrl, basePage.getCurrentUrl());
+        marketPage.clickList(searchPage.allLinks , 2);
+        Assert.assertEquals(newsUrl, marketPage.getCurrentUrl());
         Assert.assertNotNull(searchPage.newsStories);
-        basePage.clickElement(searchPage.yandexFullLink);
+        marketPage.clickElement(searchPage.yandexFullLink);
 		
-        basePage.clickList(searchPage.allLinks , 3);
-        Assert.assertEquals(basePage.getCurrentTitle(), mapsTitle);
+        marketPage.clickList(searchPage.allLinks , 3);
+        Assert.assertEquals(marketPage.getCurrentTitle(), mapsTitle);
         Assert.assertNotNull(searchPage.mapsZoom);
-        basePage.clickElement(searchPage.yandexFullLink);
+        marketPage.clickElement(searchPage.yandexFullLink);
 		
-        basePage.clickList(searchPage.allLinks , 4);
-        Assert.assertEquals(basePage.getCurrentTitle(), marketTitle);
+        marketPage.clickList(searchPage.allLinks , 4);
+        Assert.assertEquals(marketPage.getCurrentTitle(), marketTitle);
         Assert.assertNotNull(searchPage.marketNavigation);
-        basePage.clickElement(searchPage.yandexFullLink);
+        marketPage.clickElement(searchPage.yandexFullLink);
 		
-        basePage.clickList(searchPage.allLinks , 5);
-        Assert.assertEquals(basePage.getCurrentUrl(), translateUrl);
+        marketPage.clickList(searchPage.allLinks , 5);
+        Assert.assertEquals(marketPage.getCurrentUrl(), translateUrl);
         Assert.assertNotNull(searchPage.translateServoce);
-        basePage.clickElement(searchPage.yandexFullLink);
+        marketPage.clickElement(searchPage.yandexFullLink);
 		
-        basePage.clickList(searchPage.allLinks , 6);
-        Assert.assertEquals(basePage.getCurrentUrl(), musicUrl);
+        marketPage.clickList(searchPage.allLinks , 6);
+        Assert.assertEquals(marketPage.getCurrentUrl(), musicUrl);
         Assert.assertNotNull(searchPage.musicTabs);
         }
 
@@ -70,28 +70,28 @@ public class NavigationTest extends WebDriverSettings {
     public void compareTest(){
         marketPage.goToMobileCategory();
 		
-        basePage.moveToElementList(marketPage.goodsToCompare, 0);
-        basePage.clickList(marketPage.goodsToCompare, 0);
+        marketPage.moveToElementList(marketPage.goodsToCompare, 0);
+        marketPage.clickList(marketPage.goodsToCompare, 0);
         Assert.assertNotNull(marketPage.compareButton);
-        basePage.moveToElementList(marketPage.goodsToCompare, 1);
-        basePage.clickList(marketPage.goodsToCompare, 1);
+        marketPage.moveToElementList(marketPage.goodsToCompare, 1);
+        marketPage.clickList(marketPage.goodsToCompare, 1);
         Assert.assertNotNull(marketPage.compareButton);
-        basePage.moveToElement(marketPage.compareButton);
-        basePage.clickElement(marketPage.compareButton);
-        basePage.moveToElementList(marketPage.comparebaleGoodsCount, 0);
-        basePage.moveToElementList(marketPage.comparebaleGoodsCount, 1);
+        marketPage.moveToElement(marketPage.compareButton);
+        marketPage.clickElement(marketPage.compareButton);
+        marketPage.moveToElementList(marketPage.comparebaleGoodsCount, 0);
+        marketPage.moveToElementList(marketPage.comparebaleGoodsCount, 1);
 		
-        basePage.moveToElement(marketPage.removeButton);
-        Assert.assertEquals(basePage.getListSize(marketPage.comparebaleGoodsCount), GOODSCOUNT);
-        basePage.clickElement(marketPage.removeButton);
+        marketPage.moveToElement(marketPage.removeButton);
+        Assert.assertEquals(marketPage.getListSize(marketPage.comparebaleGoodsCount), GOODSCOUNT);
+        marketPage.clickElement(marketPage.removeButton);
         Assert.assertNotNull(marketPage.emptyContent);
     }
 	    @Test
     public void sortPriceTest(){
         marketPage.goToMobileCategory();
-        basePage.clickList(marketPage.sorterFilters, 0);
-        basePage.scrollToElement(marketPage.toClick);
-        List<String> notSortedPrice =basePage.getTextList(marketPage.pricesAll);
+        marketPage.clickList(marketPage.sorterFilters, 0);
+        marketPage.scrollToElement(marketPage.toClick);
+        List<String> notSortedPrice =marketPage.getTextList(marketPage.pricesAll);
         List<String> sortedPrice = notSortedPrice;
         Collections.sort(sortedPrice);
         Assert.assertNotNull(marketPage.priceIsSelected);
@@ -101,24 +101,22 @@ public class NavigationTest extends WebDriverSettings {
 	    @Test
     public void switchCountTest() {
         marketPage.goToMobileCategory();
-	    
-        basePage.scrollToElementJS(marketPage.showBotton);
-        basePage.moveToElement(marketPage.showBotton);
-        basePage.clickElement(marketPage.showBotton);
-        List<String> list48=basePage.getTextList(marketPage.selectText);
+        marketPage.scrollToElementJS(marketPage.showBotton);
+        marketPage.moveToElement(marketPage.showBotton);
+        marketPage.clickElement(marketPage.showBotton);
+        List<String> list48=marketPage.getTextList(marketPage.selectText);
         Integer id48=list48.indexOf(SHOW48);
-        basePage.clickList(marketPage.selectText, id48);
-        basePage.scrollToElementJS(searchPage.yandexFullLink);
-        Assert.assertEquals(basePage.getListSize(marketPage.elementsCount),SORTCOUNT48);
-	    
-        basePage.scrollToElementJS(marketPage.showBotton);
-        basePage.moveToElement(marketPage.showBotton);
-        basePage.clickElement(marketPage.showBotton);
-        List<String> list12=basePage.getTextList(marketPage.selectText);
-        Integer id12=basePage.compareTextInList(list12,SHOW12);
-        basePage.clickList(marketPage.selectText, id12);
-        basePage.scrollToElementJS(searchPage.yandexFullLink);
-        Assert.assertEquals(basePage.getListSize(marketPage.elementsCount),SORTCOUNT12);
+        marketPage.clickList(marketPage.selectText, id48);
+        marketPage.scrollToElementJS(searchPage.yandexFullLink);
+        Assert.assertEquals(marketPage.getListSize(marketPage.elementsCount),SORTCOUNT48);
+        marketPage.scrollToElementJS(marketPage.showBotton);
+        marketPage.moveToElement(marketPage.showBotton);
+        marketPage.clickElement(marketPage.showBotton);
+        List<String> list12=marketPage.getTextList(marketPage.selectText);
+        Integer id12=marketPage.compareTextInList(list12,SHOW12);
+        marketPage.clickList(marketPage.selectText, id12);
+        marketPage.scrollToElementJS(searchPage.yandexFullLink);
+        Assert.assertEquals(marketPage.getListSize(marketPage.elementsCount),SORTCOUNT12);
 
     }
 }
