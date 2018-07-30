@@ -5,22 +5,7 @@ import ru.yandex.pages.MarketPage;
 import static ru.yandex.tests.SwitchCountTest.marketPage;
 
 public class NavigationTest extends MarketPage {
-    private static String videoUrl = "https://yandex.ru/video/";
-    private static String imagesUrl = "https://yandex.ru/images/";
-    private static String newsUrl = "https://news.yandex.ru/";
-    private static String mapsTitle = "Яндекс.Карты — выбирайте, где поесть, куда сходить, чем заняться";
-    private static String marketTitle = "Яндекс.Маркет — выбор и покупка товаров из проверенных интернет-магазинов";
-    private static String translateUrl = "https://translate.yandex.ru/";
-    private static String musicUrl = "https://music.yandex.ru/";
-    public static Integer GOODSCOUNT=2;
-    public static MarketPage marketPage;
-    public static Integer SORTCOUNT12 = 12;
-    public static Integer SORTCOUNT48 = 48;
-    public static String SHOW12 ="Показывать по 12";
-    public static String SHOW48 ="Показывать по 48";
-	
-	searchPage = new SearchPage(driver);
-	marketPage = new MarketPage(driver);
+    marketPage = new MarketPage(driver);
 
 
      @Test
