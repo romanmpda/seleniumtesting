@@ -15,7 +15,7 @@ public class NavigationTest extends WebDriverSettings {
     private static String translateUrl = "https://translate.yandex.ru/";
     private static String musicUrl = "https://music.yandex.ru/";
     public static Integer GOODSCOUNT=2;
-	public static MarketPage marketPage;
+    public static MarketPage marketPage;
     public static Integer SORTCOUNT12 = 12;
     public static Integer SORTCOUNT48 = 48;
     public static String SHOW12 ="Показывать по 12";
