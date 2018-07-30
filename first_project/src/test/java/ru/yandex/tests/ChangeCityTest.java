@@ -17,6 +17,7 @@ public class ChangeCityTest extends WebDriverSettings {
         basePage.inputText(FIRSTCITY, geoPage.inputCity);
         geoPage.searchMoreElements();
         List<String> firstCityMore = basePage.getTextList(geoPage.moreLink);
+        
         geoPage.setupCityEnter();
         basePage.inputText(SECONDCITY, geoPage.inputCity);
         geoPage.searchMoreElements();
