@@ -1,4 +1,5 @@
 package ru.yandex.tests;
+import io.github.bonigarcia.wdm.WebDriverManager;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.firefox.FirefoxDriver;
 import org.testng.annotations.AfterClass;
@@ -11,13 +12,12 @@ public class WebDriverSettings{
     public static WebDriver driver;
     public static BasePage basePage;
     public static String YANDEXHOMEURL="https://www.yandex.ru/";
-    public static String CHROMEDRIVERLOCATION = "chromedriver.exe";
     public static Integer PAGELOADTIMEOUT = 20;
 
 
     @BeforeClass
     public void  setup(){
-        System.setProperty("webdriver.chrome.driver" ,CHROMEDRIVERLOCATION);
+        WebDriverManager.chromedriver().setup();
         driver = new ChromeDriver();
         basePage = new BasePage(driver);
         driver.manage().window().maximize();

@@ -1,9 +1,12 @@
 package ru.yandex.tests;
+import lombok.extern.slf4j.Slf4j;
 import org.testng.Assert;
 import org.testng.annotations.Test;
+import ru.yandex.pages.BasePage;
 import ru.yandex.pages.GeoPage;
 import java.util.List;
 
+@Slf4j
 public class ChangeCityTest extends WebDriverSettings {
     public static String FIRSTCITY="Пекин";
     public static String SECONDCITY="Кишинев";
@@ -11,17 +14,18 @@ public class ChangeCityTest extends WebDriverSettings {
 
     @Test
     public void geoTest(){
+        log.info("Демо тест поиска города");
         geoPage = new GeoPage(driver);
-        geoPage.openPage(YANDEXHOMEURL);
+        BasePage basePage = new BasePage(driver);
+        basePage.openPage(YANDEXHOMEURL);
         geoPage.setupCityEnter();
-        geoPage.inputText(FIRSTCITY, geoPage.inputCity);
+        basePage.inputText(FIRSTCITY, geoPage.inputCity);
         geoPage.searchMoreElements();
-        List<String> firstCityMore = geoPage.getTextList(geoPage.moreLink);
         
         geoPage.setupCityEnter();
-        geoPage.inputText(SECONDCITY, geoPage.inputCity);
+        basePage.inputText(SECONDCITY, geoPage.inputCity);
         geoPage.searchMoreElements();
-        List<String> secondCityMore = geoPage.getTextList(geoPage.moreLink);
-        Assert.assertEquals(secondCityMore, firstCityMore);
+        log.info("Демо тест поиска города завершен");
+
     }
 }

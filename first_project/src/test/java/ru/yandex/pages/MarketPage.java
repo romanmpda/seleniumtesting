@@ -5,10 +5,12 @@ import org.openqa.selenium.support.FindAll;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 import java.util.List;
+import ru.yandex.tests.WebDriverSettings;
+
 import static ru.yandex.tests.WebDriverSettings.basePage;
 
 
-public class MarketPage extends BasePage{
+public class MarketPage extends WebDriverSettings {
     public MarketPage(WebDriver driver) {
         PageFactory.initElements(driver, this);
         this.driver = driver;

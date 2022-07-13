@@ -1,15 +1,14 @@
 package ru.yandex.pages;
-import org.openqa.selenium.By;
+import lombok.extern.slf4j.Slf4j;
 import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.PageFactory;
-import java.util.ArrayList;
 import java.util.List;
 
-
-public class BasePage extends WebDriverSettings{
+@Slf4j
+public class BasePage {
     public BasePage(WebDriver driver) {
         PageFactory.initElements(driver, this);
         this.driver = driver;
@@ -17,6 +16,7 @@ public class BasePage extends WebDriverSettings{
     public WebDriver driver;
 
     public void openPage(String urlGet){
+        log.info("Открываю страницу: {}", urlGet);
         driver.get(urlGet);
     }
 
@@ -54,11 +54,6 @@ public class BasePage extends WebDriverSettings{
     public Integer getListSize(List<WebElement> locatorToCount){
         Integer listSize = locatorToCount.size();
         return listSize;
-    }
-    public List getTextList(List <WebElement> textToGetList){
-        List<String> textGetedList = new ArrayList<>();
-        textToGetList.forEach(WebElement->{textGetedList.add(WebElement.getText());});
-        return textGetedList;
     }
     public Integer compareTextInList(List<String> stringToComapre, String compareWith){
         Integer idOfEqual = stringToComapre.indexOf(compareWith);
